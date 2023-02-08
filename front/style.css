@@ -1,0 +1,46 @@
+body {
+    background-image: url('../assets/background-index.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.form-class {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.choose-class {
+    display: flex;
+    justify-content: center;
+
+}
+
+.btn-submit {
+    display: flex;
+    justify-content: center;
+
+}
+
+.btn-submit input {
+    margin-top: 2rem;
+    background-color: blue;
+    color: white;
+    border: transparent;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.sprite {
+    height: 500px;
+    width: 350px;
+    margin-left: 20px;
+}
+
+.sprite-vivi {
+    height: 500px;
+    width: 300px;
+    margin-left: 20px;
+}
