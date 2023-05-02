@@ -14,27 +14,53 @@ include("../config/connexion.php");
     <title>Showdown Battle</title>
 </head>
 
-<body>
+<body class="index">
 
-    <form action="../config/newUser.php" method="post">
+    <form action="./chooseFight.php" method="post">
+
+        <div class="showClass" id="showClass">
+
+        </div>
 
         <div class="choose-class">
-            <img class="sprite" src="../assets/archer.gif">
-            <img class="sprite-vivi" src="../assets/wizard.gif">
-            <img class="sprite" src="../assets/warrior.gif">
+
+
+            <select name="class" id="class">
+                <option value="Warrior">Guerrier</option>
+                <option value="Wizard">Magicien</option>
+                <option value="Archer">Archer</option>
+            </select>
         </div>
+
 
 
         <div class="form-class">
-            <label>Entrer votre pseudo</label>
-            <input type="" name="pseudo">
+
+            <div class="pseudo">
+                <label>Entrer votre pseudo</label>
+                <input type="text" name="pseudo">
+            </div>
+
+            <div class="btn-submit">
+                <input type="submit">
+            </div>
         </div>
 
 
-        <div class="btn-submit">
-            <input type="submit">
-        </div>
+
+
+
+
     </form>
+
+
+
+
+    <script src="./main.js"></script>
+
+
+
+
 </body>
 
 </html>

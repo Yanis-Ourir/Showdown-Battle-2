@@ -4,26 +4,34 @@ include('./personnage.php');
 
 class CharacterManager
 {
+    private $name;
+    private $class;
+    private $pdo;
 
-    public function addCharacter()
+    public function __construct($pdo)
     {
-        $sqlAddFight = "INSERT INTO personnage (id_personnage, name, hp, damage) VALUES (null, $name, hp, damage)";
-        $pdo->exec($sqlAddFight);
+        $this->pdo;
+    }
+
+    public function addCharacter($name, $class)
+    {
+        $sqlAddFight = "INSERT INTO personnage (id_personnage, name, hp, damage, class) VALUES (null, '$name', hp, damage, class)";
+        $this->pdo->exec($sqlAddFight);
     }
 
     public function characterUpdate()
     {
-        $sqlUpdate = "UPDATE INTO";
+        $sqlUpdate = "UPDATE personnage SET (id_personnage, name, hp, dmg, class) VALUES (null, '$this->name', hp, dmg, class)";
     }
 
     public function deleteCharacter($name)
     {
         try {
 
-            $sqlDelete = $pdo->prepare("DELETE FROM personnage WHERE id_personnage = '$name'");
+            $sqlDelete = $this->pdo->prepare("DELETE FROM personnage WHERE id_personnage = '$name'");
             $characterDelete = $sqlDelete->execute();
 
-            echo "Personne bien supprimé";
+            echo "Personnage bien supprimé";
         } catch (PDOException $e) {
             die('Erreur : ' . $e->getMessage());
         }
@@ -31,20 +39,20 @@ class CharacterManager
 
     public function selectCharacter($name)
     {
-        $sqlSelect = $pdo->prepare("SELECT FROM personnage WHERE id_personnage = '$name'");
+        $sqlSelect = $this->pdo->prepare("SELECT FROM personnage WHERE id_personnage = '$name'");
         $characterSelect = $sqlSelect->execute();
     }
 
     public function characterCount()
     {
-        $sqlCount = $pdo->prepare("SELECT COUNT(*) FROM personnage");
+        $sqlCount = $this->pdo->prepare("SELECT COUNT(*) FROM personnage");
         $sqlCount->execute();
     }
 
     public function charactersList()
     {
         $sqlCharactersList = "SELECT * FROM personnage";
-        $charactersList = $pdo->prepare($sqlCharactersList);
+        $charactersList = $this->pdo->prepare($sqlCharactersList);
         $charactersList->execute();
         $characters = $charactersList->fetchAll();
 

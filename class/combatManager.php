@@ -6,13 +6,14 @@ include('./personnage.php');
 class CombatManager
 {
     private $pdo;
+    private $name;
 
-    private $name = $_POST['chooseOpponent'];
 
-    public function __construct($pdo) {
-        
+
+    public function __construct($pdo)
+    {
+
         $this->pdo = $pdo;
-
     }
 
     public function addFight()
@@ -21,7 +22,7 @@ class CombatManager
         $this->pdo->exec($sqlAddFight);
     }
 
-    public function characterUpdate()
+    public function fightUpdate()
     {
         $sqlUpdate = "UPDATE combat SET (id, characters, id_user, id_personnage) VALUES (null, '$this->name', id_user, id_personnage)";
     }
@@ -53,13 +54,13 @@ class CombatManager
 
     public function fightList()
     {
-        $sqlFightList = "SELECT * FROM personnage";
+        $sqlFightList = "SELECT * FROM combat";
         $fightList = $this->pdo->prepare($sqlFightList);
         $fightList->execute();
         $fights = $fightList->fetchAll();
 
         foreach ($fights as $fight) {
-            echo "<p>" . $fight['name'] . "</p><br>";
+            echo "<p>" . $fight['characters'] . "</p><br>";
         }
     }
 }

@@ -1,20 +1,47 @@
-body {
+.index {
     background-image: url('../assets/background-index.gif');
     background-repeat: no-repeat;
+    background-size: 2000px 1000px;
+}
+
+.select-fight {
+    background-image: url('../assets/background-select.gif');
+}
+
+.Fighting-club {
+    background-image: url('../assets/ff7-battle.jpg');
     background-size: 100%;
 }
 
 .form-class {
-    color: white;
-    display: flex;
-    justify-content: center;
     margin-top: 3rem;
+    color: black;
+    margin-left: 40%;
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: white;
+
+
+
 }
 
+
+
 .choose-class {
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
 
+}
+
+.select-class {
+    border: 2px solid green;
+    width: fit-content;
+    border-radius: 5px;
+    background-color: aqua;
 }
 
 .btn-submit {
@@ -32,15 +59,149 @@ body {
     border-radius: 5px;
 }
 
+.showClass {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+
+}
 
 .sprite {
     height: 500px;
     width: 350px;
-    margin-left: 20px;
+    margin-left: 3rem;
+    padding-right: 0px;
+    transition: transform .2s;
+
 }
 
 .sprite-vivi {
     height: 500px;
     width: 300px;
-    margin-left: 20px;
+    margin-left: 3rem;
+    transition: transform .2s;
+
+}
+
+.sprite:hover {
+    transform: scale(1.2);
+}
+
+.sprite-vivi:hover {
+    transform: scale(1.2);
+}
+
+.footer-index {
+    display: flex;
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+}
+
+/* CHOOSE FIGHT . PHP */
+
+.userCard {
+    color: black;
+    margin-left: 45%;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: white;
+    width: fit-content;
+    padding: 10px;
+}
+
+.mini-sprite {
+    width: 200px;
+    height: 180px;
+}
+
+.mini-sprite-fight {
+    width: 250px;
+    height: 250px;
+}
+
+.ennemy {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.ennemy-card {
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    animation: transform .2s;
+    padding: 10px;
+    margin-left: 2rem;
+}
+
+.ennemy-card:hover {
+    transform: scale(1.2);
+}
+
+.choose-opponent {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* FIGHT.PHP */
+
+.versus {
+    display: flex;
+    justify-content: center;
+    margin-top: 26%;
+}
+
+.player {
+    margin-right: 25rem;
+}
+
+.menu {
+    display: flex;
+
+    justify-content: center;
+    bottom: 0;
+    height: 200px;
+}
+
+.action {
+    background-color: #5454A4;
+    border: 3px solid #CED2D6;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    width: 200px;
+    font-weight: 800;
+}
+
+.action p:hover {
+    border: 2px solid #CED2D6;
+    border-radius: 5px;
+    border-width: fit-content;
+}
+
+.cible {
+    background-color: #5454A4;
+    border: 3px solid #CED2D6;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    width: 500px;
+    text-align: end;
+    font-weight: 700;
+}
+
+.group {
+
+    background-color: #5454A4;
+    border: 3px solid #CED2D6;
+    border-radius: 10px;
+    padding: 10px;
+    width: 500px;
+    color: white;
+    font-weight: 700;
 }

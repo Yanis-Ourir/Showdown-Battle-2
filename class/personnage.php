@@ -3,8 +3,8 @@
 class Personnage
 {
     protected $name;
-    private $hp = 100;
-    private $class = ['Warrior', 'Wizard', 'Archer'];
+    protected $hp = 100;
+    private $class;
     private $cible;
     private $atk = 20;
 
@@ -13,6 +13,26 @@ class Personnage
     {
         $this->name = $name;
         $this->class = $class;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getHp()
+    {
+        return $this->hp;
+    }
+
+    public function getClass()
+    {
+        return $this->class;
+    }
+
+    public function getDmg()
+    {
+        return $this->atk;
     }
 
     public function attack($cible)
